@@ -47,7 +47,7 @@ public class Hash implements AM {
         
 	String S = "";
 	try{
-		Scanner sc = new Scanner(new File(info.curtask.findFile("input.txt")));
+		Scanner sc = new Scanner(new File(info.curtask.findFile("sin.txt")));
 		S = sc.nextLine();
 	}
 	catch (IOException e) {e.printStackTrace(); return;}
@@ -81,9 +81,7 @@ public class Hash implements AM {
        
  	long endTime = System.nanoTime();
 	
-        System.out.println("Result: " + hash);
-        //writer.write(hash + "\n");
-        //writer.close();
+        System.out.println("Result: " + hash.toString());
        
         
         long timeElapsed = endTime - startTime;
