@@ -81,8 +81,8 @@ public class Hash implements AM {
  	long endTime = System.nanoTime();
 	
         System.out.println("Result: " + hash);
-        writer.write(hash + "\n");
-        writer.close();
+        //writer.write(hash + "\n");
+        //writer.close();
        
         
         long timeElapsed = endTime - startTime;
