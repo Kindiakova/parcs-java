@@ -26,7 +26,7 @@ public class Hash implements AM {
 
 
     public static void main(String[] args) throws Exception {
-    	startTime = System.nanoTime();
+    	
     	
         System.err.println("Preparing...");
         
@@ -43,12 +43,10 @@ public class Hash implements AM {
 
         System.err.println("Reading input...");
        
-        //BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        //String S = br.readLine();
-        //br.close();
+        
 	String S = "";
 	try{
-		Scanner sc = new Scanner(new File(info.curtask.findFile("sin.txt")));
+		Scanner sc = new Scanner(new File(info.curtask.findFile("input.txt")));
 		S = sc.nextLine();
 	}
 	catch (IOException e) {e.printStackTrace(); return;}
@@ -57,7 +55,7 @@ public class Hash implements AM {
         int sub_len = (int) Math.ceil(len / n);
 
         System.err.println("Forwarding parts to workers...");
-      
+       startTime = System.nanoTime();
         channel[] channels = new channel[n];
         for (int i = 0; i < n; i++) {
             String substring = S.substring(i * sub_len, 
@@ -79,14 +77,14 @@ public class Hash implements AM {
         System.err.println("Calculation of the result");
      
         BigInteger hash = resultСalculation(sub_hash, sub_len);
-  
- 
-        BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(System.out));
        
+ 	long endTime = System.nanoTime();
+	
+        System.out.println("Result: " + hash);
         writer.write(hash + "\n");
         writer.close();
        
-        long endTime = System.nanoTime();
+        
         long timeElapsed = endTime - startTime;
         double seconds = timeElapsed / 1_000_000_000.0;
         System.err.println("Time passed: " + seconds + " seconds.");
