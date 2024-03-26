@@ -52,7 +52,7 @@ public class Hash implements AM {
 	catch (IOException e) {e.printStackTrace(); return;}
         
         int len = S.length();
-        int sub_len =  -(-len / n);
+        int sub_len = (len + n - 1) / n;
 	 System.err.println(len);
 	  System.err.println(sub_len);
 
