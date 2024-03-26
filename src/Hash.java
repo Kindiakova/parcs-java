@@ -47,7 +47,7 @@ public class Hash implements AM {
         
 	String S = "";
 	try{
-		Scanner sc = new Scanner(new File(info.curtask.findFile("sin.txt")));
+		Scanner sc = new Scanner(new File(info.curtask.findFile("input.txt")));
 		S = sc.nextLine();
 	}
 	catch (IOException e) {e.printStackTrace(); return;}
