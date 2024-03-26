@@ -53,6 +53,8 @@ public class Hash implements AM {
         
         int len = S.length();
         int sub_len =  -(-len / n);
+	 System.err.println(len);
+	  System.err.println(sub_len);
 
         System.err.println("Forwarding parts to workers...");
        startTime = System.nanoTime();
