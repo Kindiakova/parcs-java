@@ -112,6 +112,7 @@ public class Hash implements AM {
         BigInteger output = BigInteger.ZERO;
         
         for (BigInteger x : subhash) {
+	     System.out.println(x.toString());
             output = output.add(x.multiply(delt).mod(MODULE)).mod(MODULE);
             delt = delt.multiply(step).mod(MODULE);
         }
