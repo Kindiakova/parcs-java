@@ -9,7 +9,6 @@ import parcs.*;
 public class Hash implements AM {
     private static long startTime = 0;
     private static final BigInteger MODULE = new BigInteger("2147483647");
-    //private static final BigInteger MODULE = new BigInteger("1000000009");
     private static final BigInteger BASE =  new BigInteger("31");
 	 
 	public static BigInteger computeHash(String str) {
@@ -47,7 +46,7 @@ public class Hash implements AM {
         
 	String S = "";
 	try{
-		Scanner sc = new Scanner(new File(info.curtask.findFile("input.txt")));
+		Scanner sc = new Scanner(new File(info.curtask.findFile("sin.txt")));
 		S = sc.nextLine();
 	}
 	catch (IOException e) {e.printStackTrace(); return;}
