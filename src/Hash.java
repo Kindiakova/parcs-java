@@ -8,9 +8,9 @@ import parcs.*;
 
 public class Hash implements AM {
     private static long startTime = 0;
-    //private static final BigInteger MODULE = new BigInteger("2147483647");
-    private static final BigInteger MODULE = new BigInteger("1000000009");
-    private static final BigInteger BASE =  new BigInteger("31");
+    private static final BigInteger MODULE = new BigInteger("2147483647");
+    //private static final BigInteger MODULE = new BigInteger("1000000009");
+    private static final BigInteger BASE =  new BigInteger("29");
 	 
 	public static BigInteger computeHash(String str) {
 		 BigInteger hashValue = BigInteger.ZERO;
@@ -59,8 +59,11 @@ public class Hash implements AM {
        startTime = System.nanoTime();
         channel[] channels = new channel[n];
         for (int i = 0; i < n; i++) {
-            String substring = S.substring(i * sub_len, 
+            String substring = "";
+	    if (i * sub_len < S.length()) {
+		substring = S.substring(i * sub_len, 
             		Math.min((i * sub_len + sub_len), S.length()));
+		}
             point p = info.createPoint();
             channel c = p.createChannel();
             p.execute("Hash");
