@@ -42,9 +42,15 @@ public class Hash implements AM {
 
         System.err.println("Reading input...");
        
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        String S = br.readLine();
-        br.close();
+        //BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        //String S = br.readLine();
+        //br.close();
+	String S = "";
+	try{
+		Scanner sc = new Scanner(new File(info.curtask.findFile("sin.txt")));
+		S = sc.nextLine();
+	}
+	catch (IOException e) {e.printStackTrace(); return;}
         
         int len = S.length();
         int sub_len = (int) Math.ceil(len / n);
