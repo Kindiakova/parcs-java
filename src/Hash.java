@@ -46,15 +46,13 @@ public class Hash implements AM {
         
 	String S = "";
 	try{
-		Scanner sc = new Scanner(new File(info.curtask.findFile("sin.txt")));
+		Scanner sc = new Scanner(new File(info.curtask.findFile("input.txt")));
 		S = sc.nextLine();
 	}
 	catch (IOException e) {e.printStackTrace(); return;}
         
         int len = S.length();
         int sub_len = (len + n - 1) / n;
-	 System.err.println(len);
-	  System.err.println(sub_len);
 
         System.err.println("Forwarding parts to workers...");
        startTime = System.nanoTime();
